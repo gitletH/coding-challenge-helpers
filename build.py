@@ -13,6 +13,6 @@ for file in glob.glob("%s*.py" % srcDir):
     with open(file, 'r') as fin:
         with open(file.replace(srcDir, outDir), 'w+') as fout:
             for line in fin:
-                if not re.match('(?:^\s*$)|(?:^#.*$)', line):
+                if not re.match(r'(?:^\s*$)|(?:^#.*$)', line):
                     fout.write(line)
                     
